@@ -18,6 +18,10 @@ class EloquentMacroableTest extends TestCase
     {
         parent::setUp();
 
+        // Drop tables if they exist
+        Schema::dropIfExists('test_teams');
+        Schema::dropIfExists('test_companies');
+
         // Create tables
         Schema::create('test_companies', function (Blueprint $table) {
             $table->id();
